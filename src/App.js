@@ -1,24 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import { Route, Routes } from "react-router-dom";
+import NavbarHeader from "./Components/Navbar/NavbarHeader";
+import "./App.css";
+// ! import this css to style components of react-bootstrap
+import "bootstrap/dist/css/bootstrap.css";
+import { Container } from "react-bootstrap";
+import Header from "./Components/Home/Home";
+import Courses from "./Components/Courses/Courses";
 
 function App() {
+  // ? import route and routes from react-router-dom...
+  //? then user this to route
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container>
+      <NavbarHeader />
+
+      <Routes>
+        <Route path="/home" element={<Header />} />
+        <Route path="/courses" element={<Courses />} />
+      </Routes>
+    </Container>
   );
 }
 
