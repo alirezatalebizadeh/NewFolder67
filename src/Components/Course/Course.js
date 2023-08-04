@@ -8,13 +8,12 @@ export default function Course(props) {
     <Card style={{ width: "18rem" }}>
       <Card.Img variant="top" src="images/chatgpt.jpg" />
       <Card.Body>
-        <Card.Title>Card Title</Card.Title>
+        <Card.Title>{props.title}</Card.Title>
         <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
+          دوره ی کاربردی چت جی پی تی برای یادگیری بهترین روش استفاده از ان ...
         </Card.Text>
         <Link to={`/course/${props.id}`}>
-          <Button variant="primary">Go somewhere</Button>
+          <Button variant="primary">مشاهده بیشتر</Button>
         </Link>
       </Card.Body>
     </Card>

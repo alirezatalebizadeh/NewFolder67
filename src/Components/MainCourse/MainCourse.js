@@ -14,15 +14,20 @@ export default function MainCourse() {
     }
   });
 
-  console.log(mainCourse);
   return (
-    <Row className="mt-5">
-      <Col xs={12} md={6}>
-        <Image fluid src={mainCourse.img} rounded />
-      </Col>
-      <Col md={6}>
-        <h1>{mainCourse.title}</h1>
-      </Col>
-    </Row>
+    <>
+      {mainCourse && (
+        <Row className="mt-5">
+          <Col xs={12} md={6}>
+            <Image fluid src={mainCourse.img} rounded />
+          </Col>
+          <Col md={6}>
+            <h1>{mainCourse.title}</h1>
+          </Col>
+        </Row>
+      )}
+      {/* //!use navigate component to redirect user */}
+      {!mainCourse && <Navigate to="/" />}
+    </>
   );
 }
