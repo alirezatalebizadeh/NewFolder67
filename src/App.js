@@ -7,6 +7,7 @@ import { Container } from "react-bootstrap";
 import Header from "./Components/Home/Home";
 import Courses from "./Components/Courses/Courses";
 import About from "./Components/About/About";
+import MainCourse from "./Components/MainCourse/MainCourse";
 
 function App() {
   // ? import route and routes from react-router-dom...
@@ -19,7 +20,7 @@ function App() {
         <Route path="/home" element={<Header />} />
         <Route path="/courses" element={<Courses />} />
         <Route path="*" element={<Header />} />
-        <Route path="/course/:courseID" element={<Courses />} />
+        <Route path="/course/:courseID" element={<MainCourse />} />
         <Route path="/about" element={<About />} />
       </Routes>
     </Container>

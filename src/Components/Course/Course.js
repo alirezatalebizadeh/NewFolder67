@@ -13,7 +13,7 @@ export default function Course(props) {
           Some quick example text to build on the card title and make up the
           bulk of the card's content.
         </Card.Text>
-        <Link to={`/course/:${props.id}`}>
+        <Link to={`/course/${props.id}`}>
           <Button variant="primary">Go somewhere</Button>
         </Link>
       </Card.Body>
