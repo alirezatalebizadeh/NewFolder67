@@ -9,15 +9,9 @@ export default function NavbarHeader() {
         <Container>
           <Navbar.Brand href="#home">Navbar</Navbar.Brand>
           <Nav className="me-auto">
-            <Nav.Link href="/home">
-              <Link to="/home">Home</Link>
-            </Nav.Link>
-            <Nav.Link href="/courses">
-              <Link to="/courses">Courses</Link>
-            </Nav.Link>
-            <Nav.Link href="/about">
-              <Link to="/about">Home</Link>
-            </Nav.Link>
+            <Link to="/home">Home</Link>
+            <Link to="/courses">Courses</Link>
+            <Link to="/about">About</Link>
           </Nav>
         </Container>
       </Navbar>

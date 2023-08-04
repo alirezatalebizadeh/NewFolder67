@@ -1,6 +1,20 @@
 body {
   text-align: center;
 }
-h1{
+
+h1 {
   text-align: center;
+}
+
+a {
+  text-decoration: none !important;
+  margin-left: 20px;
+}
+
+.cards {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 1rem;
 }
