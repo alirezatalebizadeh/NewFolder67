@@ -15,16 +15,16 @@ export default function Users() {
   const [email, setEmail] = useState("");
 
   //! fetch all data from database
-  useEffect(async () => {
-    await fetch(
-      "https://sabzlearn-3f278-default-rtdb.firebaseio.com/users.json"
-    )
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(Object.entries(data));
-        setUsers(Object.entries(data));
-      });
-  }, [getData]);
+  // useEffect(async () => {
+  //   await fetch(
+  //     "https://sabzlearn-3f278-default-rtdb.firebaseio.com/users.json"
+  //   )
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       console.log(Object.entries(data));
+  //       setUsers(Object.entries(data));
+  //     });
+  // }, [getData]);
 
   //!find anyUser with id in realtime
   useEffect(() => {
