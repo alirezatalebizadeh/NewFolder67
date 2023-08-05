@@ -6,14 +6,13 @@ import "./App.css";
 import { Container } from "react-bootstrap";
 import routs from "./routes";
 
-
 function App() {
   // ? import route and routes from react-router-dom...
   //? then user this to route
 
   //! you can use useRoutes to route of site
 
-  let router = useRoutes(routs);
+let router = useRoutes(routs);
   return (
     <Container>
       <NavbarHeader />

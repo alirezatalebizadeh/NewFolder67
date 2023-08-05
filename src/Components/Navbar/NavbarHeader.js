@@ -27,6 +27,8 @@ export default function NavbarHeader() {
             <Link to="about/dashboard">
               Dashbaord <AiFillDashboard />
             </Link>
+            <Link to="/login">login/signup</Link>
+            <Link to="/user">user</Link>
           </Nav>
         </Container>
       </Navbar>
