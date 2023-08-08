@@ -1,6 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { Accordion } from "react-bootstrap";
+import UseUpdateLogger from "./UseUpdateLogger";
+import UseCounter from "./UseCounter";
 export default function Home() {
+
+ 
+  const [value, setValue] = UseUpdateLogger('')
+  const [count, addCount, minusCount] = UseCounter(0)
+
+
   return (
     <div className="mt-5">
       <Accordion>
@@ -53,6 +61,10 @@ export default function Home() {
           </Accordion.Body>
         </Accordion.Item>
       </Accordion>
+      <input type='text' value={value} onChange={e => setValue(e.target.value)} />
+      <h1>{count}</h1>
+      <button onClick={addCount}>Add count</button>
+      <button onClick={minusCount}>minus count</button>
     </div>
   );
 }
