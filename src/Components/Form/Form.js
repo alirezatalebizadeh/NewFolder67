@@ -1,29 +1,38 @@
 import React, { useState, useEffect } from "react";
 import "./Form.css";
+import UseInput from "./UseInput";
 
 export default function Form() {
 
-    const [firstName, setFirstName] = useState('')
-    const [lastName, setLastName] = useState('')
-    const [email, setEmail] = useState('')
+    // const [firstName, setFirstName] = useState('')
+    // const [lastName, setLastName] = useState('')
+    // const [email, setEmail] = useState('')
     const [users, setUsers] = useState([])
+
+    const [firstValue, firstValueBinding, resetValueFirstname] = UseInput('')
+    const [lastNameValue, lastNameValueBinding, resetValueLastName] = UseInput('')
+    const [email, emailBinding, resetValueEmail] = UseInput('')
 
 
 
     //!create user and save in db
     const registerHandler = event => {
         event.preventDefault()
+        alert(`hello ${firstValue} ${lastNameValue}`)
+        resetValueEmail()
+        resetValueFirstname()
+        resetValueLastName()
 
-        let userInfo = {
-            firstName,
-            lastName,
-            email
-        }
+        // let userInfo = {
+        //     firstName,
+        //     lastName,
+        //     email
+        // }
 
-        fetch('https://sabzlearn-3f278-default-rtdb.firebaseio.com/users.json', {
-            method: 'POST',
-            body: JSON.stringify(userInfo)
-        }).then(response => console.log(response))
+        // fetch('https://sabzlearn-3f278-default-rtdb.firebaseio.com/users.json', {
+        //     method: 'POST',
+        //     body: JSON.stringify(userInfo)
+        // }).then(response => console.log(response))
     }
 
     return (
@@ -31,8 +40,7 @@ export default function Form() {
             <form className="register-form" autoComplete="off" onSubmit={registerHandler}>
                 <input
                     id="first-name"
-                    value={firstName}
-                    onChange={(event) => setFirstName(event.target.value)}
+                    {...firstValueBinding}
                     className="form-field"
                     type="text"
                     placeholder="First Name"
@@ -40,8 +48,7 @@ export default function Form() {
                 />
                 <input
                     id="last-name"
-                    value={lastName}
-                    onChange={(event) => setLastName(event.target.value)}
+                    {...lastNameValueBinding}
                     className="form-field"
                     type="text"
                     placeholder="Last Name"
@@ -51,7 +58,7 @@ export default function Form() {
                 <input
                     id="email"
                     value={email}
-                    onChange={(event) => setEmail(event.target.value)}
+                    {...emailBinding}
                     className="form-field"
                     type="text"
                     placeholder="Email"
